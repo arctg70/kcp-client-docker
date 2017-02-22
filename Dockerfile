@@ -1,4 +1,4 @@
-FROM beiying123/ssr-docker
+FROM arctg70/ssr-docker
 
 ENV KCP_VER 20161222
 
