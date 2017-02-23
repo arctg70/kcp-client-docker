@@ -11,14 +11,14 @@ RUN \
     && apk del .build-deps 
     
 
-EXPOSE 8889/tcp 29900/udp
+EXPOSE 8999/tcp 29900/udp
 
 # ENTRYPOINT ["/usr/bin/supervisord"]
 
 #/opt/kcptun/client_linux_amd64 -l :29900 -t 127.0.0.1:8989 -crypt "salsa20" --mtu 1400 --sndwnd 1024 --rcvwnd 1024 --mode "fast2"
 
 ENV SERVER 0.0.0.0:29900
-ENV LOCAL_ADDR 0.0.0.0:8999
+ENV LOCAL_ADDR :8999
 ENV PASSWORD default
 ENV CRYPY salsa20
 ENV MTU 1400
