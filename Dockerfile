@@ -32,6 +32,6 @@ CMD /opt/kcptun/client_linux_amd64 -r $SERVER \
             -l $LOCAL_ADDR \
             -crypt "$CRYPY" \
             --mtu $MTU \
-            --sndwnd $SNDWND
-            --rcvwnd $RCVWND
+            --sndwnd $SNDWND \
+            --rcvwnd $RCVWND \
             --mode "$MODE"
