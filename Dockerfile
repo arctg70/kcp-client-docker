@@ -8,12 +8,9 @@ RUN \
     && cd /opt/kcptun \
     && curl -fSL https://github.com/xtaci/kcptun/releases/download/v$KCP_VER/kcptun-linux-amd64-$KCP_VER.tar.gz | tar xz \
     && cd ~ \
-    && apk del .build-deps \
-    && apk add --no-cache supervisor
+    && apk del .build-deps 
     
-COPY supervisord.conf /etc/supervisord.conf
-ADD start.sh /start.sh
-RUN chmod +x /start.sh
 
 EXPOSE 8889/tcp 29900/udp
-ENTRYPOINT ["/usr/bin/supervisord"]
+
+# ENTRYPOINT ["/usr/bin/supervisord"]
