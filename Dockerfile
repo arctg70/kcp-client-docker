@@ -1,4 +1,4 @@
-FROM arctg70/ssr-docker
+FROM alpine:edge
 
 ENV KCP_VER 20161222
 
