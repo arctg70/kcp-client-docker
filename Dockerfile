@@ -26,10 +26,10 @@ ENV SNDWND 1024
 ENV RCVWND 1024
 ENV MODE fast2
 
-EXPOSE $LOCAL_PORT
+#EXPOSE $LOCAL_PORT
 
-CMD /opt/kcptun/client_linux_amd64 -r $SERVER \
-            -l $LOCAL_ADDR \
+CMD /opt/kcptun/client_linux_amd64 -r "$SERVER" \
+            -l "$LOCAL_ADDR" \
             -crypt "$CRYPY" \
             --mtu $MTU \
             --sndwnd $SNDWND \
