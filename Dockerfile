@@ -1,6 +1,6 @@
 FROM alpine:edge
 
-ENV KCP_VER 20170322
+ENV KCP_VER 20170329
 
 RUN \
     apk add --no-cache --virtual .build-deps curl \
