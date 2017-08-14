@@ -1,6 +1,6 @@
 FROM alpine:edge
 
-ENV KCP_VER 20170329
+ENV KCP_VER 20170525
 
 RUN \
     apk add --no-cache --virtual .build-deps curl \
@@ -20,7 +20,7 @@ EXPOSE 8999/tcp 29900/udp
 ENV SERVER 0.0.0.0:29900
 ENV LOCAL_ADDR :8999
 ENV PASSWORD default
-ENV CRYPY salsa20
+ENV CRYPT salsa20
 ENV MTU 1350
 ENV SNDWND 1024
 ENV RCVWND 1024
@@ -30,7 +30,8 @@ ENV MODE fast2
 
 CMD /opt/kcptun/client_linux_amd64 -r "$SERVER" \
             -l "$LOCAL_ADDR" \
-            -crypt "$CRYPY" \
+            --crypt "$CRYPT" \
+            --key "$PASSWORD" \
             --mtu $MTU \
             --sndwnd $SNDWND \
             --rcvwnd $RCVWND \
